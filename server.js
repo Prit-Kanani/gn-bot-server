@@ -39,9 +39,9 @@ const server = http.createServer(async (req, res) => {
 
             const text = await response.text();
 
-            // Return to the frontend chatbot with CORS allowed
+            // Return to the frontend chatbot with CORS allowed and proper UTF-8 encoding
             res.writeHead(200, {
-                "Content-Type": "text/plain",
+                "Content-Type": "text/plain; charset=utf-8",
                 "Access-Control-Allow-Origin": "*"
             });
             res.end(text);
